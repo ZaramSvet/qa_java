@@ -8,8 +8,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(MockitoJUnitRunner.class)
-public class CatTest extends TestCase {
+public class CatTest {
     private Cat cat;
 
     @Mock
@@ -23,9 +25,12 @@ public class CatTest extends TestCase {
 
     @Test
     public void testGetSound() {
-        String actual = cat.getSound();
+        Feline feline = new Feline();
+        String expectedSound = "Мяу";
+        String actualSound = cat.getSound();
+        assertEquals(expectedSound, actualSound);
 
-        assertEquals("Мяу", actual);
+        // assertEquals("Мяу", actual);
     }
 
     @Test
